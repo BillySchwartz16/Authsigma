@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AuthSigma – Keycloak/OIDC Security Audit</title>
+  <meta name="description" content="AuthSigma helps platform and security teams identify OAuth client exposure paths, stale service accounts, and risky client-credentials flows across Keycloak and OIDC environments. Fixed-scope audit, delivered in 5–10 business days." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AuthSigma – Keycloak/OIDC Security Audit" />
+  <meta property="og:description" content="Find risky OAuth clients before a leaked secret becomes an incident. Fixed-scope audit, practical remediation backlog, 5–10 business days." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION
+       ============================================================ -->
+  <nav class="nav" aria-label="Primary navigation">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo" aria-label="AuthSigma home">
+        <span class="nav__logo-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M12 2L3 7v5c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V7l-9-5z"/>
+          </svg>
+        </span>
+        AuthSigma
+      </a>
+
+      <ul class="nav__links" id="nav-links" role="list">
+        <li><a href="#problem">Problem</a></li>
+        <li><a href="#offer">Audit Scope</a></li>
+        <li><a href="#deliverables">Deliverables</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+      </ul>
+
+      <div class="nav__cta">
+        <a href="mailto:hello@authsigma.com?subject=AuthSigma%20Audit%20Inquiry" class="btn btn--primary">
+          Book a Call
+        </a>
+      </div>
+
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <line x1="3" y1="6"  x2="21" y2="6" />
+          <line x1="3" y1="12" x2="21" y2="12" />
+          <line x1="3" y1="18" x2="21" y2="18" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       1. HERO
+       ============================================================ -->
+  <header class="hero" id="top">
+    <div class="container">
+      <div class="hero__eyebrow" aria-label="Fixed-scope identity security audit">
+        Keycloak &amp; OIDC Security Audit
+      </div>
+
+      <h1 class="hero__headline fade-up">
+        Find risky OAuth clients before a leaked secret becomes <em>an incident</em>.
+      </h1>
+
+      <p class="hero__sub fade-up">
+        AuthSigma helps platform and security teams identify client-secret exposure paths,
+        stale service accounts, risky client-credentials flows, weak redirect URIs, and
+        overbroad scopes across Keycloak and OIDC environments.
+      </p>
+
+      <div class="hero__ctas fade-up">
+        <a
+          href="mailto:hello@authsigma.com?subject=AuthSigma%20-%20Book%20a%2020-Minute%20Call"
+          class="btn btn--primary btn--lg"
+        >
+          <!-- calendar icon -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8"  y1="2" x2="8"  y2="6"></line>
+            <line x1="3"  y1="10" x2="21" y2="10"></line>
+          </svg>
+          Book a 20-minute call
+        </a>
+        <a href="#offer" class="btn btn--outline btn--lg">View audit scope</a>
+      </div>
+
+      <p class="hero__trust fade-up" aria-label="Engagement terms">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+        Fixed-scope audit. Practical remediation backlog. Delivered in 5–10 business days.
+      </p>
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       2. PROBLEM
+       ============================================================ -->
+  <section class="problem" id="problem" aria-labelledby="problem-heading">
+    <div class="container">
+      <div class="problem__header fade-up">
+        <span class="section-label">Identity Risk</span>
+        <h2 id="problem-heading">Your biggest identity risk may not be the login screen.</h2>
+        <p>
+          OAuth and OIDC environments often accumulate hidden risk over time: stale clients,
+          long-lived secrets, service accounts with broad access, weak redirect URI patterns,
+          unclear ownership, and limited visibility into how client credentials are used.
+          If a client secret leaks, most teams cannot quickly answer what it can access,
+          where it is used, or how fast they can contain it.
+        </p>
+      </div>
+
+      <div class="problem__cards" role="list">
+
+        <article class="risk-card fade-up" role="listitem">
+          <div class="risk-card__icon" aria-hidden="true">
+            <!-- clock/stale icon -->
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Stale OAuth Clients</h3>
+          <p>Unused clients accumulate over time. Each one is a potential lateral-movement
+            surface with valid credentials and forgotten access grants.</p>
+        </article>
+
+        <article class="risk-card fade-up" role="listitem">
+          <div class="risk-card__icon" aria-hidden="true">
+            <!-- user-check icon -->
+            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><polyline points="17 11 19 13 23 9"/></svg>
+          </div>
+          <h3>Over-Permissioned Service Accounts</h3>
+          <p>Client-credentials flows often carry broader scopes than the service requires.
+            Compromised accounts mean over-broad access with no human MFA backstop.</p>
+        </article>
+
+        <article class="risk-card fade-up" role="listitem">
+          <div class="risk-card__icon" aria-hidden="true">
+            <!-- key icon -->
+            <svg viewBox="0 0 24 24"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 1 1-7.778 7.778 5.5 5.5 0 0 1 7.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+          </div>
+          <h3>Leaked Client-Secret Exposure Paths</h3>
+          <p>Secrets embedded in JavaScript bundles, CI/CD configs, repositories, or
+            environment files create silent exposure that standard SAST often misses.</p>
+        </article>
+
+        <article class="risk-card fade-up" role="listitem">
+          <div class="risk-card__icon" aria-hidden="true">
+            <!-- alert-triangle icon -->
+            <svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <h3>Weak Redirect URI &amp; Scope Design</h3>
+          <p>Wildcard or over-permissive redirect URIs enable open-redirect and token-hijacking
+            attacks. Overbroad scopes amplify the blast radius of any compromise.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       3. OFFER
+       ============================================================ -->
+  <section class="offer" id="offer" aria-labelledby="offer-heading">
+    <div class="container">
+      <div class="offer__header fade-up">
+        <span class="section-label">Audit Scope</span>
+        <h2 id="offer-heading">Keycloak / OIDC Security Audit</h2>
+        <p>A fixed-scope audit designed to quickly identify practical, high-impact
+          identity risks in your OAuth/OIDC setup.</p>
+      </div>
+
+      <div class="offer__grid">
+        <div class="offer__list fade-up">
+          <ul aria-label="Audit deliverables">
+            <li>OAuth client inventory review</li>
+            <li>Service account and client-credentials risk review</li>
+            <li>Confidential vs. public client misconfiguration review</li>
+            <li>Redirect URI risk review</li>
+            <li>Stale client and unused service account review</li>
+            <li>Scope, role, and permission review</li>
+            <li>Secret exposure path review across authorized endpoints,
+                JavaScript bundles, and repositories</li>
+            <li>Logging and detection gap review</li>
+            <li>Executive summary and technical remediation backlog</li>
+            <li>60-minute readout call</li>
+          </ul>
+        </div>
+
+        <div class="offer__sidebar">
+          <div class="offer__badge fade-up">
+            <h3>Starting at</h3>
+            <p>$7,500 <span>fixed fee</span></p>
+          </div>
+
+          <div class="offer__timeline fade-up">
+            <p>Delivery timeline</p>
+            <strong>5–10 business days</strong>
+          </div>
+
+          <div class="offer__timeline fade-up" style="background: var(--bg-card); border-color: var(--border);">
+            <p>Environments covered</p>
+            <strong>Keycloak, Auth0, Okta, Azure AD, custom OIDC</strong>
+          </div>
+
+          <a
+            href="mailto:hello@authsigma.com?subject=AuthSigma%20Audit%20Inquiry"
+            class="btn btn--primary fade-up"
+          >
+            Get started
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       4. DELIVERABLES
+       ============================================================ -->
+  <section class="deliverables" id="deliverables" aria-labelledby="deliverables-heading">
+    <div class="container">
+      <div class="deliverables__header fade-up">
+        <span class="section-label">Deliverables</span>
+        <h2 id="deliverables-heading">What you get</h2>
+        <p>Three concrete outputs your team can act on immediately.</p>
+      </div>
+
+      <div class="deliverables__cols">
+
+        <article class="deliverable-card fade-up">
+          <div class="deliverable-card__num">01</div>
+          <h3>Executive Summary</h3>
+          <p>Clear business-level explanation of the highest-risk identity issues and
+            recommended next steps — written for security and engineering leadership,
+            not just practitioners.</p>
+        </article>
+
+        <article class="deliverable-card fade-up">
+          <div class="deliverable-card__num">02</div>
+          <h3>Technical Findings</h3>
+          <p>Prioritized list of risky clients, weak configurations, service-account
+            concerns, and exposure paths — with evidence, severity ratings, and
+            context your team can act on.</p>
+        </article>
+
+        <article class="deliverable-card fade-up">
+          <div class="deliverable-card__num">03</div>
+          <h3>Remediation Backlog</h3>
+          <p>Actionable fixes your team can put directly into Jira, GitHub Issues,
+            or your internal workflow — scoped and ready to assign, without
+            additional triage effort.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       5. PRICING
+       ============================================================ -->
+  <section class="pricing" id="pricing" aria-labelledby="pricing-heading">
+    <div class="container">
+      <div class="pricing__inner">
+        <div class="pricing__card fade-up">
+          <div class="pricing__header">
+            <span class="section-label">Pricing</span>
+            <h2 id="pricing-heading">Simple fixed-fee engagement</h2>
+
+            <div class="pricing__price">
+              <span class="from">Starting at</span>
+              <span class="amount">$7,500</span>
+              <span class="period">/ audit</span>
+            </div>
+
+            <p class="pricing__desc">
+              Focused Keycloak/OIDC audit delivered in 5–10 business days.
+              No retainer required, no scope creep, no surprise invoices.
+            </p>
+          </div>
+
+          <div class="pricing__terms" aria-label="Payment terms">
+            <div class="pricing__term">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                <line x1="1" y1="10" x2="23" y2="10"></line>
+              </svg>
+              50% upfront to begin
+            </div>
+            <div class="pricing__term">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polyline points="20 12 20 22 4 22 4 12"></polyline>
+                <path d="M22 7H2l10-5 10 5z"></path>
+              </svg>
+              50% on delivery
+            </div>
+            <div class="pricing__term">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+              Optional monthly monitoring retainer after the audit
+            </div>
+            <div class="pricing__term">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              5–10 business day delivery
+            </div>
+          </div>
+
+          <div class="pricing__guarantee" role="note">
+            <strong>Early customer guarantee:</strong> If AuthSigma does not identify at least
+            5 actionable improvements in your environment, 50% of the fee is refunded.
+            No questions asked.
+          </div>
+
+          <div class="pricing__actions">
+            <a
+              href="mailto:hello@authsigma.com?subject=AuthSigma%20-%20Book%20a%2020-Minute%20Call"
+              class="btn btn--primary btn--lg"
+            >
+              Book a 20-minute call
+            </a>
+            <a href="mailto:hello@authsigma.com?subject=AuthSigma%20Pricing%20Question" class="btn btn--outline btn--lg">
+              Ask a question
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       6. WHY AUTHSIGMA
+       ============================================================ -->
+  <section class="why" id="why" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="why__inner">
+
+        <div class="why__text">
+          <span class="section-label">Why AuthSigma</span>
+          <h2 id="why-heading">Built by a practitioner, not a generic scanner.</h2>
+          <p>
+            AuthSigma is built from hands-on enterprise security, SRE, and identity
+            infrastructure experience. The audit focuses on real operational risk: OAuth clients,
+            service accounts, token flows, secrets, logging, certificate trust, and production
+            identity platform hygiene.
+          </p>
+
+          <div class="why__pillars" role="list">
+            <div class="why__pillar" role="listitem">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+              Focused on OAuth/OIDC and identity platform risk, not generic vulnerability scanning
+            </div>
+            <div class="why__pillar" role="listitem">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+              </svg>
+              Practical remediation output — not just a list of theoretical issues
+            </div>
+            <div class="why__pillar" role="listitem">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+              </svg>
+              No automated scanner report hand-off — human analysis and judgement throughout
+            </div>
+            <div class="why__pillar" role="listitem">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                <line x1="3" y1="9" x2="21" y2="9"/>
+                <line x1="9" y1="21" x2="9" y2="9"/>
+              </svg>
+              Covers Keycloak, Auth0, Okta, Azure AD, and custom OIDC implementations
+            </div>
+          </div>
+        </div>
+
+        <div class="why__visual fade-up" aria-hidden="true">
+          <div class="why__diagram" role="presentation">
+            <div class="why__diagram-title">// sample findings surface</div>
+
+            <div class="why__diagram-row">
+              <span class="why__diagram-dot dot-red"></span>
+              <span class="why__diagram-label">client_credentials – wildcard redirect</span>
+              <span class="why__diagram-badge badge-critical">CRITICAL</span>
+            </div>
+            <div class="why__diagram-row">
+              <span class="why__diagram-dot dot-red"></span>
+              <span class="why__diagram-label">svc-payments – secret in JS bundle</span>
+              <span class="why__diagram-badge badge-critical">CRITICAL</span>
+            </div>
+            <div class="why__diagram-row">
+              <span class="why__diagram-dot dot-orange"></span>
+              <span class="why__diagram-label">legacy-api – 847 days stale</span>
+              <span class="why__diagram-badge badge-high">HIGH</span>
+            </div>
+            <div class="why__diagram-row">
+              <span class="why__diagram-dot dot-orange"></span>
+              <span class="why__diagram-label">reporting-svc – overbroad scope</span>
+              <span class="why__diagram-badge badge-high">HIGH</span>
+            </div>
+            <div class="why__diagram-row">
+              <span class="why__diagram-dot dot-yellow"></span>
+              <span class="why__diagram-label">data-export – no logging configured</span>
+              <span class="why__diagram-badge badge-medium">MEDIUM</span>
+            </div>
+            <div class="why__diagram-row">
+              <span class="why__diagram-dot dot-green"></span>
+              <span class="why__diagram-label">auth-gateway – well configured</span>
+              <span class="why__diagram-badge badge-low">PASS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       7. CTA SECTION
+       ============================================================ -->
+  <section class="cta-section" id="contact" aria-labelledby="cta-heading">
+    <div class="container">
+      <span class="section-label fade-up">Get Started</span>
+      <h2 id="cta-heading" class="fade-up">
+        Want to know where your OAuth/OIDC risk is hiding?
+      </h2>
+      <p class="fade-up">
+        Book a 20-minute call to see whether a fixed-scope audit makes sense
+        for your environment.
+      </p>
+      <a
+        href="mailto:hello@authsigma.com?subject=AuthSigma%20-%20Book%20a%2020-Minute%20Call"
+        class="btn btn--primary btn--lg fade-up"
+      >
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="16" y1="2" x2="16" y2="6"></line>
+          <line x1="8"  y1="2" x2="8"  y2="6"></line>
+          <line x1="3"  y1="10" x2="21" y2="10"></line>
+        </svg>
+        Book a 20-minute call
+      </a>
+      <p class="hero__trust fade-up">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20 6L9 17l-5-5"/>
+        </svg>
+        Or email directly: <a href="mailto:hello@authsigma.com">hello@authsigma.com</a>
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__brand-name">AuthSigma</span>
+        <span class="footer__brand-sub">Keycloak / OIDC Security Audit</span>
+      </div>
+      <div class="footer__contact">
+        <a href="mailto:hello@authsigma.com">hello@authsigma.com</a>
+        <span class="footer__copy">&copy; 2025 AuthSigma. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
